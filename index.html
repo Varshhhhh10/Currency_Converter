@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        *{
+            margin:0px;
+            padding:0px;
+        }
+        .container{
+            @import url('https://fonts.googleapis.com/css2?family=Autour+One&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
+            font-family: "Autour One", system-ui;
+            font-weight: 400;
+            font-style: normal;
+            min-height: 100vh;
+            max-width: 80vw;
+            margin:auto;
+            
+        }
+        .container h1{
+            text-align: center;
+        }
+        .container form input[type='number'],select{
+            background-color: #ffffff;
+            font-size: 25px;
+            margin: 23px 0;
+            color: #000000;
+            width: 25vw;
+
+        }
+        .container form label{
+            @import url('https://fonts.googleapis.com/css2?family=Autour+One&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
+            font-family: "Autour One", system-ui;
+            font-weight: 400;
+            font-style: normal;
+            background-color: #ffffff;
+            font-size: 25px;
+            margin-bottom: 23px 0;
+            color: #001d3d;
+
+            
+
+        }
+        .container form {
+            display:flex;
+            flex-direction: column;
+        }
+        .container h1,h2 {
+            color: #001d3d;
+            padding-top: 40px;;
+            padding-bottom: 40px;
+           
+        }
+        footer{ /* style for footer*/
+            text-align: center;
+            @import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+            font-family: "Kanit", sans-serif;
+            font-weight: 600;
+            font-style: normal;
+            color: #001d3d;
+        }
+        nav{  /* style for navbar */
+            @import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
+            font-family: "Noto Sans", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 500;
+            font-style: normal;
+            color: #89c2d9;  
+            display: flex;
+            font-size: 20px;
+            background-color: #003566;
+            padding:23px;
+        }
+        nav li a{ /* style for links on navbar */
+            text-decoration: none;
+            color: #89c2d9;
+        }
+        nav li a:hover{ /* animation for navbar links */
+            text-decoration: none;
+            color: #52b69a;
+            transition: all;
+            transition-duration: 10ms;
+        }
+        nav ul li{ /* to remove the default underline for anchor tag */
+            list-style: none ;
+            margin: 0 30px;
+        }
+        nav ul{ /* to make list horizonatally */
+            display: flex;
+        }
+        div.logo{ /* The currency converter on the left */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            
+        }
+        .btn{
+            width: 100px;
+            padding: 5px;
+            font-size: 20px;
+            background-color:#023e8a;
+            border-radius: 10px;
+            cursor: pointer;
+            color: #ffffff;
+        }
+        .output table{
+            width: 50vw;
+            text-align: center;
+            border: 2px solid #003566;
+            font-size: 20px;
+        }
+        .output{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo"> Currency Converter</div>
+
+        <ul>
+            <li> <a href="/index.html">Home</a></li>
+            <li> <a href="/About"></a>About Us</a></li>
+            <li> <a href="/Contact"></a>Contact</a></li>
+        </ul>
+        
+     
+
+    </nav>
+    <div class="container">
+        <h1>Choose a Currency to convert </h1>
+    
+        <form action="/action.php" method="get"> 
+            <label for="quantity"> Choose a Quantity: </label>
+            <input type="number" name="quantity" min="1">
+            <label for="currency"> Choose a Currency: </label>
+            <select name="currency">
+                <option value="INR">Indian Rupee</option>
+                <option value="USD">US Dollars</option>
+                <option value="EUR">Euros</option>
+            </select>
+        <button class="btn" type="submit">Submit</button>
+        </form>
+        <div class="output">
+         <table>
+            <h2> Here's your converted values in different currencies</h2>
+            
+            <thead>
+                <tr>
+                    <th>Currency</th>
+                    <th >Currency Code</th>
+                    <th >Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+            </tbody>
+            
+        </table>
+    </div>
+
+    </div>
+    <footer>
+       Copyright &copy; All rights reserved.
+
+    </footer>
+    <script src="main.js"></script>
+    
+</body>
+</html>
